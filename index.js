@@ -1,5 +1,5 @@
-require("dotenv").config();
-// const dotenv = require('dotenv');
+// require("dotenv").config();
+const dotenv = require('dotenv');
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const { generateToken } = require("./controllers/token");
 // middlewares
 app.use(express.json());
+dotenv.config();
 app.use(cors())
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
